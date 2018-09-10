@@ -1,13 +1,15 @@
-// Given an array to find the occurence of element in an array.
+/** 
+Problem:
+You have a javascript array that likely has some duplicate values and you would like a count of those values.
+var arr = new Array("dog", "dog", "cat", "buffalo", "wolf", "cat", "tiger", "cat");
+Output:
+{dog: 2, cat: 3, buffalo: 1, wolf: 1, tiger: 1}
+*/
+
 arr = [1,4,3,6,9,7,6,1,4,3,3,3];
-// OUTPUT - {1: 2, 3: 4, 4: 2, 6: 2, 7: 1, 9: 1}
 result = {};
 
 for(i=0; i< arr.length; i++) {
-    if (!result[i])
-      result[i] = 1;
-    else
-     result[i] = result[i] + 1;
+  result[arr[i]] = (result[arr[i]] || 0) + 1;
 }
-
 console.log(result);
