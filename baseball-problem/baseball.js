@@ -1,8 +1,7 @@
 function calPoints(ops) {
     const scoreStack = [];
-    let score = 0;
 
-    ops.forEach(ele => {
+    return ops.reduce((score, ele) => {
         switch(ele) {
             case 'C': {
                 score -= scoreStack.pop();
@@ -28,6 +27,6 @@ function calPoints(ops) {
                 break;
             }
         }
-    });
-    return score;
+        return score;
+    }, 0);
 }
